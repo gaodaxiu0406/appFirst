@@ -1,0 +1,137 @@
+<widget id="A12345678901"  version="0.0.1">
+    <name>firstApp</name>
+    <description>
+        我的第一个App.
+    </description>
+    <author email="1260833716@qq.com" href="//www.apicloud.com">
+        APICloud.SIR
+    </author>
+    <content src="index.html" />
+
+    <!-- 配置在哪些类型的页面里面可以访问APICloud的扩展API方法 -->
+    <access origin="*" />
+
+    <!-- 配置Frame的背景颜色或图片，默认为透明色。此字段的配置效果等同于对网页的body标签设置background-color -->
+    <preference name="windowBackground" value="#FFF" />
+
+    <!-- 配置页面是否可以弹动。若不配置，window默认不弹动，frame默认可以弹动；若配置，则window和frame是否可以弹动默认都以此配置的为准 -->
+    <preference name="pageBounce" value="false" />
+
+    <!-- 配置在页面高度超出视图高度时，window|frame是否显示横|竖滚动条。默认显示 -->
+    <!-- 横向滚动条： -->
+    <!-- <preference name="hScrollBarEnabled" value="true|false" /> -->
+    <!-- 竖直滚动条： -->
+    <!-- <preference name="vScrollBarEnabled" value="true|false" /> -->
+
+    <!-- 配置应用界面是否和设备状态栏重合，表现效果为系统的状态栏是否覆盖在当前应用上。若配置了statusBarAppearance字段，此字段将会忽略 支持iOS7及以上系统 -->
+    <preference name="iOS7StatusBarAppearance" value="true" />
+
+    <!-- 配置应用是否全屏运行。如果该字段为true，应用将以全屏的方式启动，并以全屏方式运行。运行过程中可随时通过APICloud开放的API（api.setFullScreen）控制退出全屏或重新进入全屏。云编译有效 -->
+    <!-- <preference name="fullScreen" value="true|false" /> -->
+
+    <!-- 配置应用是否自动检测更新。如果该字段为true，应用在启动时将自动与云端握手，并检查本应用是否有更新，是否被强制关闭，是否强制更新等（以上控制可在云端控制台“版本”中设置）。应用运行过程中会根据这些设置进行相关操作，如：自动下载、强制关闭应用等；若配置为false，则不会弹出任何更新提示。云编译有效 -->
+    <preference name="autoUpdate" value="false" />
+
+    <!-- 配置应用是否支持增量更新以及云修复。如果该字段为true，应用在启动时将自动与云端握手，并检查本应用当前版本下是否有增量包更新，是否需要进行云修复。应用运行过程中会根据这些设置进行相关操作，如：提示更新下载、静默更新下载等。云编译有效 -->
+    <preference name="smartUpdate" value="true" />
+
+    <!-- 配置应用是否处于调试模式。如果该字段为true，标识应用进入调试模式，应用运行过程中发生的因代码书写失误等原因导致的Js报错（引起执行中断）信息，将会以弹窗的方式覆盖在应用最上方，供开发者参考。 -->
+    <preference name="debug" value="false" />
+
+    <!-- 配置是否允许使用第三方键盘。若不允许，键盘弹出后将不能选择第三方输入法进行输入。只支持iOS，云编译有效 -->
+    <preference name="allowKeyboardExtension" value="false" />
+
+    <!-- 配置键盘弹出后页面的处理方式。云编译有效
+    resize：弹出键盘时会把页面往上推移，iOS平台resize和auto等效;
+    pan：弹出键盘时页面不会被往上推移
+    auto：由系统根据输入框位置决定是否页面往上推移
+    -->
+    <preference name="softInputMode" value="resize"/>
+
+    <!-- 配置是否显示键盘上方的工具条。该配置只对通过api对象方法打开的页面有效。只支持iOS -->
+    <preference name="softInputBarEnabled" value="false" />
+
+    <!-- 配置是否允许iOS 11及以上系统中页面元素默认的拖拽行为。只支持iOS -->
+    <preference name="dragAndDrop" value="false" />
+
+    <!-- 用于配置字体文件，配置以后在前端页面里面就可以使用该字体。字体文件需放在widget目录里面，可以同时配置多种字体。目前只支持iOS，云编译有效。 -->
+    <!-- 配置一个值： -->
+    <!-- <preference name="font" value="widget/res/xingkai.ttf" /> -->
+    <!-- 配置多个值，各值之间用竖线 | 隔开： -->
+    <!-- <preference name="font" value="widget/res/xingkai.ttf | widget/res/lishu.ttf" /> -->
+
+    <!-- 用于配置iOS后台运行，配置后可以实现后台播放音乐、获取位置信息等功能。云编译有效。
+    audio：在后台播放和录制音频，包括使用AirPlay播放音频、视频流
+    location：在后台持续获取位置信息
+    voip：网络电话
+    newsstand-content：报刊杂志类应用在后台下载内容
+    external-accessory：与定期更新的硬件外设工作
+    bluetooth-central：作为蓝牙中心，与蓝牙外设通信
+    bluetooth-peripheral：作为蓝牙外设，进行蓝牙通信
+    fetch：定期下载少量的内容
+    remote-notification：希望在收到通知后立即去下载相关内容，使相关内容可以尽快显示出来
+    不要随意配置后台运行，因为后台运行的同时也会带来电池续航的问题，苹果公司规定应用使用了后台运行时，必须要在iTunes Connect里应用的描述里面进行声明，否则应用会被拒绝。具体可以参考其他应用如百度地图里面的描述。
+    -->
+    <!-- 配置一个值： -->
+    <!-- <preference name="backgroundMode" value="audio"/> -->
+    <!-- 配置多个值，各值之间用竖线 | 隔开： -->
+    <!-- <preference name="backgroundMode" value="audio | location"/> -->
+
+    <!-- 配置应用的URL Scheme，该scheme用于从浏览器或其他应用中启动本应用，并且可以传递参数数据。此字段云编译有效。 配置后，外部浏览器页面里面就可以通过a标签链接打开应用 value的值必须是小写，否则将不起作用 -->
+    <!-- <a href="myscheme://?param1=xxx&param2=xxx">测试打开应用</a> -->
+
+    <!-- iOS9中对检测应用是否安装的方法做了限制，只允许检测在Info.plist中配置过的LSApplicationQueriesSchemes字段（即白名单列表）里面的应用。所以若代码里面调用了api.appInstalled等方法来检测应用是否安装，那么需要在此字段里面配置被检测应用的URL Scheme才能得到期望的结果。此字段云编译有效 -->
+    <!-- 多个值之间用英文逗号隔开 -->
+    <!-- <preference name="querySchemes" value="weixin,sinaweibo" /> -->
+    <!-- <key>以下是常用的一些应用的URL Scheme可以参考。</key> -->
+    <array>
+       <!-- 微信 URL Scheme 白名单-->
+       <string>wechat</string>
+       <string>weixin</string>
+
+       <!-- 新浪微博 URL Scheme 白名单-->
+       <string>sinaweibohd</string>
+       <string>sinaweibo</string>
+       <string>sinaweibosso</string>
+       <string>weibosdk</string>
+       <string>weibosdk2.5</string>
+
+       <!-- QQ、Qzone URL Scheme 白名单-->
+       <string>mqqapi</string>
+       <string>mqq</string>
+       <string>mqqOpensdkSSoLogin</string>
+       <string>mqqconnect</string>
+       <string>mqqopensdkdataline</string>
+       <string>mqqopensdkgrouptribeshare</string>
+       <string>mqqopensdkfriend</string>
+       <string>mqqopensdkapi</string>
+       <string>mqqopensdkapiV2</string>
+       <string>mqqopensdkapiV3</string>
+       <string>mqzoneopensdk</string>
+       <string>wtloginmqq</string>
+       <string>wtloginmqq2</string>
+       <string>mqqwpa</string>
+       <string>mqzone</string>
+       <string>mqzonev2</string>
+       <string>mqzoneshare</string>
+       <string>wtloginqzone</string>
+       <string>mqzonewx</string>
+       <string>mqzoneopensdkapiV2</string>
+       <string>mqzoneopensdkapi19</string>
+       <string>mqzoneopensdkapi</string>
+       <string>mqzoneopensdk</string>
+
+       <!-- 支付宝  URL Scheme 白名单-->
+       <string>alipay</string>
+       <string>alipayshare</string>
+    </array>
+
+
+
+
+
+    <permission name="call" />
+    <feature name="weiXin">
+        <param name="urlScheme" value="wx7779c7c063a9d4d9" />
+    </feature>
+</widget>
